@@ -1,0 +1,11 @@
+[Unit]
+Description=boot service
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=no
+ExecStart=sudo python /home/ADE-MASTER/Desktop/morse/proyecto/boot.py
+
+[Install]
+WantedBy=multi-user.target
