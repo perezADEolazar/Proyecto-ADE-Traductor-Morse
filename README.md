@@ -12,7 +12,10 @@
 
 Este repositorio contiene el código fuente para la implementación de un traductor de código Morse en una Raspberry Pi. El proyecto se encuentra diseñado para escribir caracteres en Morse mediante un botón y/o la terminal del celular e imprimir en una pantalla LCD la traducción en alfabeto latino. Además, las dos luces LED incluidas en el proyecto permiten al usuario monitorizar el estado de la traducción/envio de caracteres, proporcionando una interfaz simple e intuitiva para dar los primeros pasos en el aprendizaje del código Morse.
 
-Clona el repositorio
+Clona el repositorio:
+```
+https://github.com/perezADEolazar/Proyecto-ADE-Traductor-Morse
+```
 
 A continuación, se encuentran descritos los requisitos y el proceso a seguir para configurar el proyecto.
 
@@ -119,7 +122,7 @@ sudo reboot
 ```
 
 ## Configuración hardware
-En cuanto al hardware, se necesitan ciertos componentes que conforman el siguiente circuito eléctrico
+En cuanto montaje físico del proyecto, se necesitan ciertos componentes que conforman el siguiente circuito eléctrico:
 ### Componentes
 
 ## Modo de uso
