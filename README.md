@@ -124,7 +124,7 @@ sudo reboot
 ## Configuración hardware
 En cuanto montaje físico del proyecto, se necesitan ciertos componentes que conforman el siguiente circuito eléctrico:
 <p align="center">
-  <img src="circuito.png" alt="Circuito del Proyecto" width="800"/>
+  <img src="images/circuito.png" alt="Circuito del Proyecto" width="800"/>
 </p>
 
 ### Componentes 🛠️
@@ -188,5 +188,5 @@ KERMAN
 
 La siguiente imagen refleja el resultado tras recibir un caracter en Morse:
 <p align="center">
-  <img src="resultado.jpg" alt="Imagen del Proyecto" width="800"/>
+  <img src="images/resultado.jpg" alt="Imagen del Proyecto" width="800"/>
 </p>
