@@ -14,7 +14,7 @@ Este repositorio contiene el código fuente para la implementación de un traduc
 
 A continuación, se encuentran descritos los requisitos y el proceso a seguir para configurar el proyecto.
 
-## Configuración software 📄
+## Configuración software
 
 Los archivos necesarios para configurar el proyecto se encuentran divididos en tres grupos: configuración de periféricos, función de traducción y arranque automático. 
 
