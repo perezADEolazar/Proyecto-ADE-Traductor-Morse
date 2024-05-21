@@ -1,5 +1,6 @@
 # **Proyecto ADE: Traductor Morse**
-![image](https://github.com/perezADEolazar/Proyecto-ADE-Traductor-Morse/assets/167235174/3e04d9bd-3a52-419e-8529-929518ae12ab)
+![Imagen1_resized](https://github.com/perezADEolazar/Proyecto-ADE-Traductor-Morse/assets/167235174/30f20dfd-2916-4669-a746-93aa4d9f1696)
+
 
 ## Tabla de contenidos:
 ---
