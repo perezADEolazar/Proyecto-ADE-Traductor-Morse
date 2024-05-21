@@ -14,7 +14,7 @@ Este repositorio contiene el código fuente para la implementación de un traduc
 
 Clona el repositorio:
 ```
-https://github.com/perezADEolazar/Proyecto-ADE-Traductor-Morse
+git clone https://github.com/perezADEolazar/Proyecto-ADE-Traductor-Morse
 ```
 
 A continuación, se encuentran descritos los requisitos y el proceso a seguir para configurar el proyecto.
@@ -123,7 +123,14 @@ sudo reboot
 
 ## Configuración hardware
 En cuanto montaje físico del proyecto, se necesitan ciertos componentes que conforman el siguiente circuito eléctrico:
+<p align="center">
+  <img src="images/mi_imagen.png" alt="Logo del Proyecto" width="200"/>
+</p>
 ### Componentes
 
+
 ## Modo de uso
+El proyecto se ejecuta junto a la inicialización de la Raspberry Pi. El usuario podrá ver en la pantalla un mensaje 
+### Morse con Botón
+### Morse con Celular
 
