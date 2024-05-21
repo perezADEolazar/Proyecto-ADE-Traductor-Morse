@@ -25,7 +25,7 @@ Los archivos necesarios para configurar el proyecto se encuentran divididos en t
 
 ### Configuración de periféricos 💡
 
-Algunos dispositivos externos utilizados en este proyecto requieren la configuración mediante software de varios puertos de la Raspberry Pi. Concretamente, las dos luces LED y el botón se comunican mediante los puertos GPIO y la pantalla LCD utiliza el protocolo I2C con los canales SDA y SCL. Además, el envio de los mensajes traducidos al celular se realiza mediante protocolo UDP. 
+Algunos dispositivos externos utilizados en este proyecto requieren la configuración mediante software de varios puertos de la Raspberry Pi. Concretamente, las dos luces LED y el botón se comunican mediante los puertos GPIO y la pantalla LCD utiliza el protocolo i2C con los canales SDA y SCL. Además, el envio de los mensajes traducidos al celular se realiza mediante protocolo UDP. 
 
 *El control de los puertos GPIO se realiza en código C mediante las librerias **pigpio**, **stdlib** y **stdio** y requiere la compilación para su ejecución:*
 
@@ -128,7 +128,17 @@ En cuanto montaje físico del proyecto, se necesitan ciertos componentes que con
 </p>
 
 ### Componentes
-
+Estos son los componentes que se han utilizado, acorde a la enumeración de la imagen:
+1. Pantalla LCD 16x2 con módulo i2C
+2. Push Button Switch
+3. LED rojo
+4. LED verde
+5. Resistencias 200Ω (x2) para los LED
+6. Resistencias 10kΩ (x2) para el botón
+7. Cables Jumper M-H (x4) para la conexión de la pantalla
+8. Cables Jumper M-M (los necesarios) para la configuración de LEDs + botón
+La pantalla es conectada mediante el protocolo i2C, en los puertos SDA, SCL, GND y 5V existentes entre los puertos GPIO.
+El botón se conecta al puerto GPIO12 y tanto a la alimentación de 3.3V como a GND. El LED rojo se conecta en la manera ilustrada en naranja (con el ánodo hacia la extensión GPIO) al pin GPIO20. Con la misma configuración, el LED verde se conecta al pin GPIO26.
 
 ## Modo de uso
 El proyecto se ejecuta junto a la inicialización de la Raspberry Pi. El usuario podrá ver en la pantalla un mensaje 
