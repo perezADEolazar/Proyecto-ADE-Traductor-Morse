@@ -12,6 +12,8 @@
 
 Este repositorio contiene el código fuente para la implementación de un traductor de código Morse en una Raspberry Pi. El proyecto se encuentra diseñado para escribir caracteres en Morse mediante un botón y/o la terminal del celular e imprimir en una pantalla LCD la traducción en alfabeto latino. Además, las dos luces LED incluidas en el proyecto permiten al usuario monitorizar el estado de la traducción/envio de caracteres, proporcionando una interfaz simple e intuitiva para dar los primeros pasos en el aprendizaje del código Morse.
 
+Clona el repositorio
+
 A continuación, se encuentran descritos los requisitos y el proceso a seguir para configurar el proyecto.
 
 ## Configuración software
@@ -36,9 +38,9 @@ Algunos dispositivos externos utilizados en este proyecto requieren la configura
 #define ButtonPin 12
 ```
 
-Comando de compilación en Linux:
+Comando de compilación en Linux, el cual crea el archivo .so (*Shared Object*) para poder ser utilizado en los archivos de Python:
 ```
-gcc -o control_gpio control_gpio.c
+gcc -Wall -shared -o control_gpio.so -fPIC control_gpio.c -lpigpio
 ```
 
 *La comunicación con la pantalla se realiza en código Python utilizando la libreria **smbus** y define una dirección de memoria para el dispositivo:*
@@ -56,22 +58,22 @@ ADDRESS = 0x27
 *La comunicación con el celular se realiza en código Python utilizando la libreria **socket** para configurar el UDP y require la conexión del dispositivo a la red IP de la Raspberry Pi:*
 
 ```
-#Importar librerias y archivos
+#Importar librerías y archivos
 import socket
 
-#Configuracion del servidor
+#Configuración del servidor
 HOST = '0.0.0.0'
 PORT = 5002  # Puerto arbitrario
 ```
 
 ### Función de traducción 📚
 
-El archivo principal del proyecto consta de varias funciones que traducen el mensaje, encienden las luces de envio e imprimen la información final en la pantalla. Además, el bucle principal muestrea en intervalos concretos de tiempo el estado del botón/terminal del celular para seleccionar cual de los caracteres pretende escribir el usuario y distinguir entre el envio de cada letra y la palabra entera.
+El archivo principal del proyecto consta de varias funciones que traducen el mensaje, encienden las luces de envío e imprimen la información final en la pantalla. Además, el bucle principal muestrea en intervalos concretos de tiempo el estado del botón/terminal del celular para seleccionar cuál de los caracteres pretende escribir el usuario y distinguir entre el envío de cada letra y la palabra entera.
 
 El código se encuentra en lenguaje Python e incluye los archivos de configuración de periféricos:
 
 ```
-#Importar librerias y archivos
+#Importar librerías y archivos
 import ctypes
 import time
 import I2C_LCD_driver
@@ -81,8 +83,8 @@ lib = ctypes.CDLL('/home/ADE-MASTER/Desktop/morse/proyecto/control_gpio.so')
 ```
 
 ```
-button_press_time0 = time.time() #Hora de la primera pulsacion guardada para escribir letras
-button_press_time1 = time.time() #Hora de la primera pulsacion guardada para enviar la palabra
+button_press_time0 = time.time() #Hora de la primera pulsación guardada para escribir letras
+button_press_time1 = time.time() #Hora de la primera pulsación guardada para enviar la palabra
 ```
 
 ```
@@ -95,10 +97,10 @@ if (time.time()-button_press_time1>6): #6 segundos sin pulsar significa guardar 
 
 ### Arranque automático 🔌
 
-Los archivos **boot** incluidos en el repositorio tienen como objetivo configurar la ejecución automática del proyecto en cada arranque de la Raspberry Pi. Para ello, es necesario generar un *servicio* con el archivo boot.service el cual ejecuta un código Python del mismo nombre. Este archivo importa todos los programas de configuración y traducción mencionados anteriormente y lanza un mensaje de inicialización en la pantalla y las luces LED. 
+Los archivos **boot** incluidos en el repositorio tienen como objetivo configurar la ejecución automática del proyecto en cada arranque de la Raspberry Pi. Para ello, es necesario generar un *servicio* con el archivo boot.service, el cual ejecuta un código Python del mismo nombre. Este archivo importa todos los programas de configuración y traducción mencionados anteriormente y lanza un mensaje de inicialización en la pantalla y las luces LED. 
 
 ```
-#Importar librerias y archivos
+#Importar librerías y archivos
 import I2C_LCD_driver
 import udp_socket
 import ctypes
@@ -117,5 +119,8 @@ sudo reboot
 ```
 
 ## Configuración hardware
+En cuanto al hardware, se necesitan ciertos componentes que conforman el siguiente circuito eléctrico
+### Componentes
+
 ## Modo de uso
 
