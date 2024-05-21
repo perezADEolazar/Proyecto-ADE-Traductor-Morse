@@ -135,14 +135,34 @@ Estos son los componentes que se han utilizado, acorde a la enumeración de la i
 4. LED verde
 5. Resistencias 200Ω (x2) para los LED
 6. Resistencias 10kΩ (x2) para el botón
-7. Cables Jumper M-H (x4) para la conexión de la pantalla
+7. Cables Jumper M-F (x4) para la conexión de la pantalla
 8. Cables Jumper M-M (los necesarios) para la configuración de los LEDs y el botón
 
 La pantalla es conectada mediante el protocolo i2C, en los puertos SDA, SCL, GND y 5V existentes entre los puertos GPIO.
 El botón se conecta al puerto GPIO12 y tanto a la alimentación de 3.3V como a GND. El LED rojo se conecta en la manera ilustrada en naranja (con el ánodo hacia la extensión GPIO) al pin GPIO20. Con la misma configuración, el LED verde se conecta al pin GPIO26.
 
 ## Modo de uso
-El proyecto se ejecuta junto a la inicialización de la Raspberry Pi. El usuario podrá ver en la pantalla un mensaje 
-### Morse con Botón
-### Morse con Celular
+El proyecto se ejecuta junto a la inicialización de la Raspberry Pi. El usuario podrá ver en la pantalla LCD un mensaje que indica ""
+Si el usuario quiere escribir mediante el celular y ver el texto traducido en la pantalla, simplemente debe esperar el tiempo necesario (unos cinco segundos) hasta que en la pantalla aparezca "CELULAR".
+En cambio, si se quiere escribir mediante el montaje del botón, debe pulsar el mismo antes de ese tiempo, y verá "BOTON" en la pantalla.
 
+### Morse con Botón
+La funcionalidad consiste en pulsar el botón cada vez que se quiera escribir un **punto (.)** y ver el punto reflejado en la pantalla, o, en su defecto, mantener pulsado el botón hasta que en la pantalla aparezca una **raya (-)**.
+
+Si se considera que la letra a escribir, es decir, el conjunto de puntos y rayas se ha terminado, tan solo hay que esperar a que el LED verde se encienda, y se verá ese conjunto de caracteres escritos en la pantalla para corroborar lo escrito.
+
+Si el usuario desea escribir otra letra, según se apague el LED verde, podrá proceder a pulsar el botón cuanto desee.
+
+Al contrario, si cree conveniente terminar de escribir y/o traducir la palabra escrita, solo se tiene que esperar más hasta que el LED rojo comience a parpadear.
+
+En ese estado, mientras el LED parpadea aún más rápido, al mantener pulsado el botón se puede cancelar la traducción del mensaje, y proceder a escribir más. Si no se pulsa el botón, el LED se terminará encendiendo y aparecerán las letras enviadas traducidas en la pantalla.
+
+### Morse con Celular
+Para enviar un código Morse desde el servidor UDP del dispositivo celular, se deben mandar el conjunto de caracteres separados por espacios, como por ejemplo:
+```
+-.- . .-. -- .- -.
+```
+Se envía ese conjunto para obtener lo siguiente en pantalla: 
+```
+KERMAN
+```
