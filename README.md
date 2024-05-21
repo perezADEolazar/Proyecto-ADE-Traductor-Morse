@@ -127,7 +127,7 @@ En cuanto montaje físico del proyecto, se necesitan ciertos componentes que con
   <img src="circuito.png" alt="Circuito del Proyecto" width="800"/>
 </p>
 
-### Componentes
+### Componentes 🛠️
 Estos son los componentes que se han utilizado, acorde a la enumeración de la imagen:
 1. **Pantalla LCD** 16x2 con módulo **i2C**
 2. **Push Button Switch**
@@ -164,7 +164,7 @@ Escribe Morse!
 ``` 
 Según se apaguen los LEDs, el usuario procederá a escribir Morse en la manera elegida.
 
-### Morse con Botón
+### Morse con Botón 🔘
 La funcionalidad consiste en pulsar el botón cada vez que se quiera escribir un **punto (.)** y ver el punto reflejado en la pantalla, o, en su defecto, mantener pulsado el botón aproximadamente un segundo hasta que en la pantalla aparezca una **raya (-)**. Así, se pueden combinar tantos puntos y rayas como se deseen.
 
 Si se considera que la letra a escribir, es decir, el conjunto de puntos y rayas se ha terminado, hay que esperar 1.5 segundos a que el LED verde se encienda, y se verá ese conjunto de caracteres escritos en la pantalla para corroborar lo escrito.
@@ -176,7 +176,7 @@ Al contrario, si cree conveniente terminar de escribir y/o traducir la palabra e
 En ese estado, mientras el LED parpadea aún más rápido, al mantener pulsado el botón se puede cancelar la traducción del mensaje, y proceder a escribir otra vez. 
 Si no se pulsa el botón, el LED se quedará encendido y aparecerán las letras traducidas en la pantalla.
 
-### Morse con Celular
+### Morse con Celular 📱
 Para enviar un código Morse desde el servidor UDP del dispositivo celular, se deben enviar el **conjunto de caracteres separados por espacios**, como por ejemplo:
 ```
 -.- . .-. -- .- -.
