@@ -3,7 +3,7 @@
 
 ## Tabla de contenidos:
 ---
-- [Introducción](#introducción)
+- [Introducción](#introducción-🚀)
 - [Configuración software](#configuración-software)
 - [Configuración hardware](#configuración-hardware)
 - [Modo de uso](#modo-de-uso)
