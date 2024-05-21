@@ -177,7 +177,7 @@ En ese estado, mientras el LED parpadea aún más rápido, al mantener pulsado e
 Si no se pulsa el botón, el LED se quedará encendido y aparecerán las letras traducidas en la pantalla.
 
 ### Morse con Celular
-Para enviar un código Morse desde el servidor UDP del dispositivo celular, se deben mandar el **conjunto de caracteres separados por espacios**, como por ejemplo:
+Para enviar un código Morse desde el servidor UDP del dispositivo celular, se deben enviar el **conjunto de caracteres separados por espacios**, como por ejemplo:
 ```
 -.- . .-. -- .- -.
 ```
