@@ -188,5 +188,5 @@ KERMAN
 
 La siguiente imagen refleja el resultado tras recibir un caracter en Morse:
 <p align="center">
-  <img src="resultado.png" alt="Imagen del Proyecto" width="800"/>
+  <img src="resultado.jpg" alt="Imagen del Proyecto" width="800"/>
 </p>
