@@ -136,7 +136,8 @@ Estos son los componentes que se han utilizado, acorde a la enumeración de la i
 5. Resistencias 200Ω (x2) para los LED
 6. Resistencias 10kΩ (x2) para el botón
 7. Cables Jumper M-H (x4) para la conexión de la pantalla
-8. Cables Jumper M-M (los necesarios) para la configuración de LEDs + botón
+8. Cables Jumper M-M (los necesarios) para la configuración de los LEDs y el botón
+
 La pantalla es conectada mediante el protocolo i2C, en los puertos SDA, SCL, GND y 5V existentes entre los puertos GPIO.
 El botón se conecta al puerto GPIO12 y tanto a la alimentación de 3.3V como a GND. El LED rojo se conecta en la manera ilustrada en naranja (con el ánodo hacia la extensión GPIO) al pin GPIO20. Con la misma configuración, el LED verde se conecta al pin GPIO26.
 
