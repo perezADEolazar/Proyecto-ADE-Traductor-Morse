@@ -129,7 +129,7 @@ En cuanto montaje físico del proyecto, se necesitan ciertos componentes que con
 
 ### Componentes
 Estos son los componentes que se han utilizado, acorde a la enumeración de la imagen:
-1. **Pantalla** LCD 16x2 con módulo i2C
+1. **Pantalla LCD** 16x2 con módulo **i2C**
 2. **Push Button Switch**
 3. **LED rojo**
 4. **LED verde**
