@@ -142,23 +142,41 @@ La pantalla es conectada mediante el protocolo i2C, en los puertos SDA, SCL, GND
 El botón se conecta al puerto GPIO12 y tanto a la alimentación de 3.3V como a GND. El LED rojo se conecta en la manera ilustrada en naranja (con el ánodo hacia la extensión GPIO) al pin GPIO20. Con la misma configuración, el LED verde se conecta al pin GPIO26.
 
 ## Modo de uso
-El proyecto se ejecuta junto a la inicialización de la Raspberry Pi. El usuario podrá ver en la pantalla LCD un mensaje que indica ""
-Si el usuario quiere escribir mediante el celular y ver el texto traducido en la pantalla, simplemente debe esperar el tiempo necesario (unos cinco segundos) hasta que en la pantalla aparezca "CELULAR".
-En cambio, si se quiere escribir mediante el montaje del botón, debe pulsar el mismo antes de ese tiempo, y verá "BOTON" en la pantalla.
+**Todo código se encuentra documentado para una mejor interpretación de la funcionalidad**
+El proyecto se ejecuta junto a la inicialización de la Raspberry Pi. El usuario podrá ver en la pantalla LCD un mensaje que indica:
+```
+BOTON / CELULAR
+```
+Si el usuario quiere escribir mediante el celular y ver el texto traducido en la pantalla, simplemente debe esperar el tiempo necesario (cinco segundos) hasta que en la pantalla aparezca 
+```
+CELULAR
+```
+En cambio, si se quiere escribir mediante el montaje del botón, debe pulsar el mismo antes de ese tiempo, y verá 
+```
+BOTON
+``` 
+en la pantalla.
+
+A continuación, los LEDs comenzarán a parpadear para avisar que la funcionalidad está en marcha, junto con el siguiente mensaje en pantalla:
+```
+Escribe Morse!
+``` 
+Según se apaguen los LEDs, el usuario procederá a escribir Morse en la manera elegida.
 
 ### Morse con Botón
-La funcionalidad consiste en pulsar el botón cada vez que se quiera escribir un **punto (.)** y ver el punto reflejado en la pantalla, o, en su defecto, mantener pulsado el botón hasta que en la pantalla aparezca una **raya (-)**.
+La funcionalidad consiste en pulsar el botón cada vez que se quiera escribir un **punto (.)** y ver el punto reflejado en la pantalla, o, en su defecto, mantener pulsado el botón aproximadamente un segundo hasta que en la pantalla aparezca una **raya (-)**. Así, se pueden combinar tantos puntos y rayas como se deseen.
 
-Si se considera que la letra a escribir, es decir, el conjunto de puntos y rayas se ha terminado, tan solo hay que esperar a que el LED verde se encienda, y se verá ese conjunto de caracteres escritos en la pantalla para corroborar lo escrito.
+Si se considera que la letra a escribir, es decir, el conjunto de puntos y rayas se ha terminado, hay que esperar 1.5 segundos a que el LED verde se encienda, y se verá ese conjunto de caracteres escritos en la pantalla para corroborar lo escrito.
 
-Si el usuario desea escribir otra letra, según se apague el LED verde, podrá proceder a pulsar el botón cuanto desee.
+Si el usuario desea escribir otra letra, según se apague el LED verde, podrá proceder a pulsar el botón cuanto desee, volviendo al primer paso.
 
-Al contrario, si cree conveniente terminar de escribir y/o traducir la palabra escrita, solo se tiene que esperar más hasta que el LED rojo comience a parpadear.
+Al contrario, si cree conveniente terminar de escribir y/o traducir la palabra escrita, solo se tiene que esperar unos seis segundos hasta que el LED rojo comience a parpadear.
 
-En ese estado, mientras el LED parpadea aún más rápido, al mantener pulsado el botón se puede cancelar la traducción del mensaje, y proceder a escribir más. Si no se pulsa el botón, el LED se terminará encendiendo y aparecerán las letras enviadas traducidas en la pantalla.
+En ese estado, mientras el LED parpadea aún más rápido, al mantener pulsado el botón se puede cancelar la traducción del mensaje, y proceder a escribir otra vez. 
+Si no se pulsa el botón, el LED se quedará encendido y aparecerán las letras traducidas en la pantalla.
 
 ### Morse con Celular
-Para enviar un código Morse desde el servidor UDP del dispositivo celular, se deben mandar el conjunto de caracteres separados por espacios, como por ejemplo:
+Para enviar un código Morse desde el servidor UDP del dispositivo celular, se deben mandar el **conjunto de caracteres separados por espacios**, como por ejemplo:
 ```
 -.- . .-. -- .- -.
 ```
