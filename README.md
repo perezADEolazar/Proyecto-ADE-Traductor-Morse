@@ -124,7 +124,7 @@ sudo reboot
 ## Configuración hardware
 En cuanto montaje físico del proyecto, se necesitan ciertos componentes que conforman el siguiente circuito eléctrico:
 <p align="center">
-  <img src="circuito.png" alt="Circuito del Proyecto" width="200"/>
+  <img src="circuito.png" alt="Circuito del Proyecto" width="800"/>
 </p>
 
 ### Componentes
