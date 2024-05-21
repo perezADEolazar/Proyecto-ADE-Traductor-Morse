@@ -1,4 +1,4 @@
-#*Proyecto ADE: Traductor Morse*
+# *Proyecto ADE: Traductor Morse*
 
 ## Tabla de contenidos:
 ---
