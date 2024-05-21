@@ -138,8 +138,8 @@ Estos son los componentes que se han utilizado, acorde a la enumeración de la i
 7. **Cables Jumper M-F** (x4) para la conexión de la pantalla
 8. **Cables Jumper M-M** (los necesarios) para la configuración de los LEDs y el botón
 
-La pantalla es conectada mediante el protocolo i2C, en los puertos SDA, SCL, GND y 5V existentes entre los puertos GPIO.
-El botón se conecta al puerto GPIO12 y tanto a la alimentación de 3.3V como a GND. El LED rojo se conecta en la manera ilustrada en naranja (con el ánodo hacia la extensión GPIO) al pin GPIO20. Con la misma configuración, el LED verde se conecta al pin GPIO26.
+La pantalla es conectada mediante el protocolo i2C, en los pines SDA, SCL, GND y 5V existentes entre los puertos GPIO.
+El botón se conecta al puerto GPIO12 y tanto a la alimentación de 3.3V como a GND. El LED rojo se conecta en la manera ilustrada en naranja, con el ánodo hacia la extensión GPIO de la Raspberry Pi, al pin GPIO20; y el cátodo a GND. Con la misma configuración, el LED verde se conecta al pin GPIO26.
 
 ## Modo de uso
 **Todo código se encuentra documentado para una mejor interpretación de la funcionalidad**
